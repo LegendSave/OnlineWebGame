@@ -1,1 +1,33 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  </head>
+  <body>
+    <canvas id="screen">Browser does not support this game.</canvas>
+    <script>
+      //Initialization
+      var canvas = document.getElementById("screen");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      var keyUsed;
+      var playerX;
+      var playerY;
+      //Remaining in 2d until webGl is needed
+      var ctx = canvas.getContext("2d");
+      
+      canvas.style.backgroundColor = "black";
+      
+      document.addEventListener("keypress", e => {
+        keyUsed = e.returnValue();
+        
+        if (keyUsed == "a")
+        {
+          playerX -= 1;
+        }
+      });
+      
+      ctx.fillRect(20, canvas.height / 2, 20, 20);
+    </script>
+  </body>
+</html>
